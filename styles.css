@@ -4,3 +4,6 @@ td {
 th {
     font-size: large;
 }
+#list2 {
+    float: left;
+}
