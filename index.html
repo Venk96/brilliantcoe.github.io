@@ -21,7 +21,7 @@
         header {
             text-align: center;
             padding: 20px 20px;
-            background-color: #1a96ef;
+            background-color: #01416f;
             color: white;
             text-shadow:
                 -2px -2px 0 black,
@@ -80,7 +80,49 @@
         #college-title {
             font-family: sans-serif
         }
+
+        #imageContainer {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #imageContainer img {
+            max-width: 80vw;
+            max-height: 80vh;
+        }
+
+        #closeButton {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            cursor: pointer;
+            font-size: 20px;
+            background: none;
+            border: none;
+        }
     </style>
+    <script>
+        window.onload = function () {
+            setTimeout(function () {
+                document.getElementById("imageContainer").style.display = "block";
+            }, 1000);
+        };
+
+        document.getElementById("closeButton").addEventListener("click", function () {
+            document.getElementById("imageContainer").style.display = "none";
+        });
+
+        function closeAdPopup() {
+            document.getElementById("imageContainer").style.display = "none";
+        }
+    </script>
 </head>
 
 <body>
@@ -91,6 +133,11 @@
             <h3>Thiruvarur road, Paruthichery, Thiruthuraipoondi, Thiruvarur - 614715</h3>
         </div>
     </header>
+
+    <div id="imageContainer">
+        <img src="img/popups/Admission-Open.jpeg" alt="Image to display">
+        <button id="closeButton" onclick="closeAdPopup()">&times;</button>
+    </div>
 
     <main>
         <div class="card">
