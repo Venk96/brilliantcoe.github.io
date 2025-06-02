@@ -1,0 +1,26 @@
+#imageContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#imageContainer img {
+    max-width: 80vw;
+    max-height: 80vh;
+}
+
+#closeButton {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    cursor: pointer;
+    font-size: 20px;
+    background: none;
+    border: none;
+}

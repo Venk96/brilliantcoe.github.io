@@ -1,5 +1,5 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="css/datepicker.css">
     <link rel="stylesheet" href="css/jquery.scrollbar.css">
     <link rel="stylesheet" href="css/prettyPhoto.css">
+    <link rel="stylesheet" href="css/popups/popups.css">
     <!-- Theme CSS -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -58,13 +59,80 @@
             display: block;
             margin-top: 0;
         }
+
+        #imageContainer {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #imageContainer img {
+            max-width: 80vw;
+            max-height: 80vh;
+        }
+
+        #closeButton {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            cursor: pointer;
+            font-size: 20px;
+            background: none;
+            border: none;
+        }
+
+        .admission-enquiry-button-animated {
+            display: inline-block;
+            background-color: #dc3545;
+            /* Red */
+            color: #ffffff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .admission-enquiry-button-animated:hover {
+            transform: scale(1.05);
+            /* Slightly scale up on hover */
+        }
     </style>
     <script>
-        console.log("Website is up");
+        window.onload = function () {
+            setTimeout(function () {
+                document.getElementById("imageContainer").style.display = "block";
+            }, 1000);
+        };
+        const el = document.getElementById("closeButton");
+        if (el) {
+            el.addEventListener("click", function () {
+                document.getElementById("imageContainer").style.display = "none";
+            });
+        }
+
+        function closeAdPopup() {
+            document.getElementById("imageContainer").style.display = "none";
+        }
     </script>
 </head>
 
 <body class="fixed-header home">
+    <div id="imageContainer">
+        <a target="_blank"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdCQcKFgESFqNPkN9GUu25gq3QXZVAklnqLQQGGauUp2Vizvg/viewform?usp=dialog"><img
+                src="img/popups/B.Ed - 2025 - Ad.jpeg" alt="Image to display"></a>
+        <button id="closeButton" onclick="closeAdPopup()">&times;</button>
+    </div>
     <div class="page-box">
         <div class="page-box-content">
             <!-- Page Loader -->
@@ -157,7 +225,10 @@
                                                 <li><a class="scroll" href="#process">About us</a></li>
                                                 <li><a class="scroll" href="#works">Gallery</a></li>
                                                 <li><a class="scroll" href="#video_gallery">Video Gallery</a></li>
-                                                <li><a class="scroll" href="#my-video">Contact Me</a></li>
+                                                <li><a
+                                                        href="https://docs.google.com/forms/d/e/1FAIpQLSdCQcKFgESFqNPkN9GUu25gq3QXZVAklnqLQQGGauUp2Vizvg/viewform?usp=dialog">Admission</a>
+                                                </li>
+                                                <li><a class="scroll" href="#my-video">Contact Us</a></li>
                                             </ul>
                                         </div>
                                         <!-- .primary -->
@@ -188,6 +259,7 @@
                 </div>
                 <!-- .header-wrapper -->
             </header>
+
             <!-- .header -->
             <div id="main">
                 <section id="home" class="slider rs-slider">
@@ -332,8 +404,9 @@
                                     <li style="text-align:left; list-style:none;"><a href="doc/Land ownership proof.pdf"
                                             target="_blank"> <img width="30" height="30" src="img/pdf.png" alt="">
                                             Notarised Affidavit - 2019</a></li>
-                                    <li style="text-align:left; list-style:none;"><a href="doc/AuditReport_FY2022-23.pdf"
-                                            target="_blank"> <img width="30" height="30" src="img/pdf.png" alt="">
+                                    <li style="text-align:left; list-style:none;"><a
+                                            href="doc/AuditReport_FY2022-23.pdf" target="_blank"> <img width="30"
+                                                height="30" src="img/pdf.png" alt="">
                                             Balance Sheet</a></li>
                                 </ul>
                             </div>
@@ -1497,9 +1570,6 @@
                                         </div>
                                         <div id="collapse21 " class="panel-collapse collapse in ">
                                             <div class="panel-body ">
-                                                <!-- Image -->
-                                                <img src="img/content/additional-img1.jpg " class="alignright "
-                                                    width="120 " height="90 " alt=" ">
                                                 <!-- Tab Content-->
                                                 <p>No. 3/87A, Thiruvarur road, Paruthichery,</p>
                                                 <p>Thiruthuraipoondi taluk,Thiruvarur district,</p>
@@ -1515,7 +1585,7 @@
                                                 <a data-toggle="collapse " data-parent="#accordion2 "
                                                     href="#collapse22 ">
                                                     <div class="livicon " data-n="pen "></div>
-                                                    E-mail id
+                                                    E-mail id: brilliantcollege@live.com
                                                 </a>
                                             </div>
                                         </div>
@@ -1533,7 +1603,7 @@
                                                 <a data-toggle="collapse " data-parent="#accordion2 "
                                                     href="#collapse23 ">
                                                     <div class="livicon " data-n="phone "></div>
-                                                    Phone
+                                                    Phone - 8489030407
                                                 </a>
                                             </div>
                                         </div>
@@ -1650,7 +1720,7 @@
                 <div class="row">
                     <!-- Copyrights -->
                     <div class="copyright col-xs-12 col-sm-6 col-md-6">
-                        <a style="font-size:11px;">© 2020 Brilliant College of Education ,Thiruthuraipoondi - All Rights
+                        <a style="font-size:11px;">© 2025 Brilliant College of Education ,Thiruthuraipoondi - All Rights
                             Reserved. </a>
                         <!-- Terms Link -->
 
